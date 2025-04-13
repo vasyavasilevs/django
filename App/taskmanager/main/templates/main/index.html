@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор репетитора по английскому</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #4a90e2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        .tutor-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tutor-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .tutor-description {
+            margin-top: 0.5rem;
+            color: #555;
+        }
+        .choose-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .choose-btn:hover {
+            background: #357ab8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Найдите своего репетитора по английскому</h1>
+    </header>
+    <main>
+        <div class="tutor-card">
+            <div class="tutor-name">Анна Иванова</div>
+            <div class="tutor-description">Разговорный английский, обучение по Zoom.</div>
+            <a class="choose-btn" href="{% url 'anna' %} " style="margin-top: 10px; display: inline-block;">Выбрать</a>
+        </div>
+
+        <div class="tutor-card">
+            <div class="tutor-name">Михаил Смирнов</div>
+            <div class="tutor-description">Стаж 5 лет, готовит к ЕГЭ и международным экзаменам.</div>
+            <a class="choose-btn" href="{% url 'mikhail' %}" style="margin-top: 10px; display: inline-block;">Выбрать</a>
+        </div>
+
+        <div class="tutor-card">
+            <div class="tutor-name">Екатерина Ли</div>
+            <div class="tutor-description">Жила в США, учит с нуля и до продвинутого уровня.</div>
+            <a class="choose-btn" href="{% url 'ekaterina' %}" style="margin-top: 10px; display: inline-block;">Выбрать</a>
+        </div>
+
+       <a href="{% url 'english_test' %}" style="
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    border: none;
+    ">
+    Пройти тест на уровень английского
+    </a>
+
+    </main>
+</body>
+</html>

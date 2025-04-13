@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш уровень</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h2 {
+            color: #003366;
+            text-align: center;
+            font-size: 28px;
+        }
+        h3 {
+            color: #003366;
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Проверка уровня английского</h1>
+</header>
+
+<main>
+    <h2>Ваш уровень: {{ level.get_name_display }}</h2>
+
+    {% if tutors %}
+        <h3>Подходящие репетиторы:</h3>
+        <ul>
+        {% for tutor in tutors %}
+            <li>{{ tutor.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Пока нет репетиторов для вашего уровня.</p>
+    {% endif %}
+
+    <a href="{% url 'english_test' %}">← Пройти тест снова</a>
+</main>
+
+</body>
+</html>
